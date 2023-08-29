@@ -26,8 +26,8 @@ Here's a list of programming languages currently included:
 - [Python](py/)
 - [C++](cpp/) (Coming soon)
 - [Java](java/) (Coming soon)
-- [JavaScript](javascript/) (Coming soon)
-- [Ruby](ruby/) (Coming soon)
+- [c#](cs/) (Coming soon)
+- more (Coming soon)
 
 ## Python Implementation
 
