@@ -14,7 +14,8 @@ public class Brainfuck {
     static int ptr = 0;
 
     // Memory array with 30000 cells
-    static int[] arr = new int[30000];
+    static int[] cells = new int[30000];
+
 
     /**
      * Main method to execute Brainfuck code.
@@ -52,7 +53,7 @@ public class Brainfuck {
                 case '<' -> moveLeft();
                 case '+' -> inc();
                 case '-' -> dec();
-                case ',' -> input();
+                case ',' -> chayIn();
                 case '.' -> output();
                 case '[' -> {
                     if (startLoop()) {
@@ -63,7 +64,7 @@ public class Brainfuck {
                     }
                 }
                 case ']' -> {
-                    if (endLoop()) {
+                    if (stopLoop()) {
                         while (ip != '[') {
                             i--;
                             ip = getCharAtIndex(code, i);
@@ -95,7 +96,7 @@ public class Brainfuck {
      * Throws an exception on buffer overflow.
      */
     public static void moveRight() {
-        if (ptr < arr.length) {
+        if (ptr < cells.length) {
             ptr++;
         } else {
             throw new RuntimeException("Buffer overflow");
@@ -106,29 +107,29 @@ public class Brainfuck {
      * Increment the current memory cell value.
      */
     public static void inc() {
-        arr[ptr]++;
+        cells[ptr]++;
     }
 
     /**
      * Decrement the current memory cell value.
      */
     public static void dec() {
-        arr[ptr]--;
+        cells[ptr]--;
     }
 
     /**
      * Read a character from the user and store its ASCII value in the current memory cell.
      */
-    public static void input() {
-        arr[ptr] = scanner.next().charAt(0);
+    public static void chayIn() {
+        cells[ptr] = scanner.next().charAt(0);
     }
 
     /**
      * Output the ASCII character of the current memory cell.
      */
     public static void output() {
-        int i = arr[ptr];
-        System.out.print((char) i);
+        int value = cells[ptr];
+        System.out.print((char) value);
     }
 
     /**
@@ -137,7 +138,7 @@ public class Brainfuck {
      * @return True if the current memory cell value is zero, otherwise false.
      */
     public static boolean startLoop() {
-        return arr[ptr] == 0;
+        return cells[ptr] == 0;
     }
 
     /**
@@ -145,7 +146,7 @@ public class Brainfuck {
      *
      * @return True if the current memory cell value is not zero, otherwise false.
      */
-    public static boolean endLoop() {
-        return arr[ptr] != 0;
+    public static boolean stopLoop() {
+        return cells[ptr] != 0;
     }
 }
