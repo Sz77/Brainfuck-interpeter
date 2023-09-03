@@ -1,6 +1,6 @@
 # Brainfuck in Various Programming Languages
 
-Welcome to the "Brainfuck in Various Programming Languages" repository! In this repository, you'll find implementations of the Brainfuck programming language in a variety of programming languages. Brainfuck is an esoteric programming language known for its minimalistic and challenging syntax.
+Welcome to the "Brainfuck in Various Programming Languages" repository! In this repository, you'll find implementations of the Brainfuck programming language in various languages. Brainfuck is an esoteric programming language known for its minimalistic and challenging syntax.
 
 ## What is Brainfuck?
 
@@ -13,7 +13,7 @@ Brainfuck is an esoteric programming language created in 1993 by Urban Müller. 
 - `[`: Jump forward to the command after the matching `]` if the byte at the memory pointer is zero.
 - `]`: Jump back to the command after the matching `[` if the byte at the memory pointer is nonzero.
 - `.`: Output the byte at the memory pointer as an ASCII character.
-- `,`: Accept one byte of input, storing its value in the byte at the memory pointer.
+- `,`: Accept one input byte, storing its value in the byte at the memory pointer.
 
 Brainfuck operates on an array of memory cells, each initially set to zero. The goal of Brainfuck is to manipulate the memory cells to produce a desired output.
 
@@ -25,7 +25,7 @@ Here's a list of programming languages currently included:
 
 - [Python](py/)
 - [C++](cpp/) (Coming soon)
-- [Java](java/) (Coming soon)
+- [Java](java/)
 - [c#](cs/) (Coming soon)
 - more (Coming soon)
 
